@@ -1,5 +1,6 @@
 class DOOMGamepadMap extends GamepadMapping {
   selectedWeapon = 1;
+  actualAxe = 'UP';
 
   map = {
     X: () => {
@@ -68,14 +69,19 @@ class DOOMGamepadMap extends GamepadMapping {
     return new KeyboardEvent(eventName, { keyCode });
   }
 
-  deletePreviousDirectionIfExist() {
+  deletePreviousDirectionIfExist(axe) {
+    if (this.actualAxe !== axe) return;
+    console.log('cambio!');
+    console.log(axe);
+    console.log(this.actualAxe);
     if (this.direction) clearTimeout(this.direction);
   }
 
   // Redefining the function
   executeAxes({ index, value }) {
     const axe = this.axes[index][value];
-    this.deletePreviousDirectionIfExist();
+    this.deletePreviousDirectionIfExist(axe);
+    this.actualAxe = axe;
     this.map[axe]();
   }
 }

@@ -30,29 +30,16 @@
   ></script>
 
   <script type="text/javascript">
-    /* var dosbox = new Dosbox({
-      id: 'dosbox',
-      onload: function(dosbox) {
-        dosbox.run(
-          'http://vps678826.ovh.net/DOSGAMES/doom.zip',
-          './DOOM/DOOM.EXE'
-        );
-      },
-      onrun: function(dosbox, app) {
-        console.log("App '" + app + "' is runned");
-      }
-    }); */
-
     var dosbox = new Dosbox({
       id: 'dosbox',
       onload: function(dosbox) {
-        dosbox.run('./digger.zip', './DIGGER.COM');
+        dosbox.run('./doom.zip', './DOOM/DOOM.EXE');
       },
       onrun: function(dosbox, app) {
         console.log("App '" + app + "' is runned");
       }
     });
 
-    const gamepad = new GamepadController(DIGGERGamepadMap);
+    const gamepad = new GamepadController(DOOMGamepadMap);
   </script>
 </html>
