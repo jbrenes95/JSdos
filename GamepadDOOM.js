@@ -38,6 +38,7 @@ class DOOMGamepadMap extends GamepadMapping {
       this.executeEvent(9);
     },
     START: () => {
+      // Open Menu
       this.executeEvent(27);
     },
 
@@ -71,9 +72,6 @@ class DOOMGamepadMap extends GamepadMapping {
 
   deletePreviousDirectionIfExist(axe) {
     if (this.actualAxe !== axe) return;
-    console.log('cambio!');
-    console.log(axe);
-    console.log(this.actualAxe);
     if (this.direction) clearTimeout(this.direction);
   }
 
